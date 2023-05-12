@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Search from './pages/Search';
 import Login from './pages/Login';
-import Register from './pages/Register';
 // Import other page components as needed
-
 
 const App = () => {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/search" component={Search} />
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/login" element={<Login />} />
         {/* Add more routes for other pages */}
-      </Switch>
+      </Routes>
     </Router>
   );
 };
